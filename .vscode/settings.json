@@ -2,7 +2,11 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
+    "appdir",
     "axiso",
+    "nextauth",
+    "nextjs",
+    "prismadb",
     "tailwindcss",
     "zustand"
   ]
