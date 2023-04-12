@@ -34,7 +34,9 @@ export const authOptions:AuthOptions={
                         email:credentials.email
                     }
                 })
-
+                
+                console.log(credentials?.email,credentials?.password)
+                console.log(user)
                 if(!user || !user?.hashedPassword){
                     throw new Error('Invalid credentials')
                 }
