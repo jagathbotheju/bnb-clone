@@ -56,12 +56,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   const onCreateReservation = useCallback(() => {
     if (!currentUser) return loginModal.onOpen();
-    //setIsLoading(true);
-
-    console.log(totalPrice);
-    console.log(dateRange.startDate);
-    console.log(dateRange.endDate);
-    console.log(listing?.id);
+    setIsLoading(true);
 
     axios
       .post("/api/reservations", {

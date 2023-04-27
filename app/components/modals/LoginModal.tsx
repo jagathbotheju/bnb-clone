@@ -32,13 +32,11 @@ const LoginModal = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    //console.log(data);
     setIsLoading(true);
     signIn("credentials", {
       ...data,
       redirect: false,
     }).then((callback) => {
-      //console.log(callback);
       setIsLoading(false);
       if (callback?.ok) {
         toast.success("Logged In");

@@ -24,7 +24,7 @@ const ReservationsClient: React.FC<ReservationClientProps> = ({
     (id: string) => {
       setDeletingId(id);
       axios
-        .delete("/api/reservations/${id}")
+        .delete(`/api/reservations/${id}`)
         .then(() => {
           toast.success("Reservation Cancelled");
           router.refresh();
@@ -38,6 +38,20 @@ const ReservationsClient: React.FC<ReservationClientProps> = ({
     },
     [router]
   );
+
+  if (reservations.length === 0) {
+    return (
+      <Container>
+        <div className="mt-20 text-center">
+          <Heading
+            title="Reservation Not Found"
+            subtitle="You do not have any reservations"
+            center
+          />
+        </div>
+      </Container>
+    );
+  }
 
   return (
     <Container>
